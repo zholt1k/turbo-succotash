@@ -1,0 +1,81 @@
+DROP TABLE IF EXISTS Books;
+
+CREATE TABLE Books (
+    BookID INT PRIMARY KEY,
+    Title VARCHAR(100),
+    Author VARCHAR(100),
+    Genre VARCHAR(50),
+    YearPublished INT
+);
+
+INSERT INTO Books (BookID, Title, Author, Genre, YearPublished) VALUES
+(1, 'The Coral Path', 'Anya Rivers', 'Adventure', 2014),
+(2, 'Whispers Beyond', 'Reina Tanaka', 'Fantasy', 2001),
+(3, 'Dream Catchers', 'Ava Thompson', 'Mystery', 1998),
+(4, 'Silent Symphony', 'Zane Cooper', 'Drama', 2005),
+(5, 'Fragments of Light', 'Nina Patel', 'Romance', 2009),
+(6, 'Frozen Watch', 'Danielle Brooks', 'Fantasy', 2016),
+(7, 'Skyward Eyes', 'Raj Kapoor', 'Science Fiction', 2023),
+(8, 'Letters Unread', 'Lucia Romano', 'Romance', 2017),
+(9, 'Neon Veins', 'Leo Zhang', 'Science Fiction', 2012),
+(10, 'Dust of Time', 'Olivia Adams', 'History', 2004),
+(11, 'Rain over Steel', 'Sophie Delgado', 'Science', 2018),
+(12, 'Crimson Mirage', 'Mei Lin', 'Mystery', 1995),
+(13, 'The Vanishing Map', 'Ahmed Latif', 'History', 1995),
+(14, 'Desert Rose', 'Carla Martinez', 'Romance', 1998),
+(15, 'Orbit Zero', 'Tessa Lin', 'Science Fiction', 1990),
+(16, 'Shadows of Tomorrow', 'Emma Clarke', 'Mystery', 2003),
+(17, 'Ink & Ashes', 'Ava Thompson', 'Thriller', 1996),
+(18, 'Binary Dreams', 'Leo Zhang', 'Science Fiction', 2000),
+(19, 'Gravity’s Edge', 'Marcus Reid', 'Science Fiction', 1997),
+(20, 'Salt and Stars', 'Aria Fernandez', 'Romance', 2012),
+(21, 'River of Smoke', 'Manoj Sen', 'Historical Fiction', 2010),
+(22, 'Code of Silence', 'Nora Grey', 'Thriller', 2017),
+(23, 'Sacred Algorithm', 'Mohammed Aziz', 'Science Fiction', 2003),
+(24, 'Tides of Memory', 'Ella Monroe', 'Drama', 2001),
+(25, 'Stolen Spirits', 'Valentina Rossi', 'Mystery', 2006),
+(26, 'Quantum Soul', 'Dr. Alicia Ford', 'Science', 2021),
+(27, 'Torn Pages', 'Natalie Young', 'Romance', 1994),
+(28, 'Dark Horizon', 'George Patel', 'Thriller', 1982),
+(29, 'Velvet Storm', 'Claire Evans', 'Romance', 1989),
+(30, 'Behind the Glass', 'Isla Chen', 'Mystery', 2019),
+(31, 'Forest of Echoes', 'Lena Hoffman', 'Adventure', 2008),
+(32, 'Parallel Hearts', 'Khalid Shah', 'Romance', 2002),
+(33, 'The Mirrored Sea', 'Ruby Dawson', 'Drama', 1992),
+(34, 'Data Rift', 'Jasper Klein', 'Science', 2019),
+(35, 'Celestial Bonds', 'Yasmin Ali', 'Fantasy', 2022),
+(36, 'Windswept Trails', 'Liam Bennett', 'Adventure', 2011),
+(37, 'Aurora’s Ashes', 'Freya Larson', 'Fantasy', 1986),
+(38, 'The Lost Heir', 'Jason Wu', 'Fantasy', 2015),
+(39, 'Inkheart Code', 'Ethan Grayson', 'Science', 2016),
+(40, 'Frozen Whispers', 'Lena Hoffman', 'Mystery', 2000),
+(41, 'Echoes of Eden', 'Jason Wu', 'Fantasy', 1999),
+(42, 'Flames of Time', 'Mateo Navarro', 'Adventure', 1996),
+(43, 'Howl of Winter', 'Oscar Blake', 'Fantasy', 1985),
+(44, 'Black Ice', 'Damien Cross', 'Thriller', 1999),
+(45, 'Garden of Fables', 'Nina Patel', 'Children', 2013),
+(46, 'Echo Protocol', 'Ethan Grayson', 'Science', 2016),
+(47, 'Chasing the Dawn', 'Elena Cruz', 'Drama', 1991),
+(48, 'Savage Grace', 'Hannah Stone', 'Mystery', 2004),
+(49, 'Dream Factory', 'Henry Whitman', 'Drama', 2015),
+(50, 'Last Horizon', 'Noah Walker', 'Thriller', 2020);
+
+-- 1. List all books in the "Science Fiction" genre
+SELECT * FROM Books
+WHERE Genre = 'Science Fiction';
+
+-- 2. Show all unique genres in the library
+SELECT DISTINCT Genre FROM Books;
+
+-- 3. Find all books published after 2010
+SELECT Title, YearPublished FROM Books
+WHERE YearPublished > 2010;
+
+-- 4. Get all books by author "Nina Patel"
+SELECT * FROM Books
+WHERE Author = 'Nina Patel';
+
+-- 5. List books ordered by most recent publication
+SELECT Title, YearPublished FROM Books
+ORDER BY YearPublished DESC;
+
